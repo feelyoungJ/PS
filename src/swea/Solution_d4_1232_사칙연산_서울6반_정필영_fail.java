@@ -50,13 +50,13 @@ public class Solution_d4_1232_사칙연산_서울6반_정필영_fail {
 				
 				
 				if (st.hasMoreTokens()) {
-					Node left = tree[Integer.parseInt(st.nextToken())];
+//					Node left = tree[Integer.parseInt(st.nextToken())];
 				} else {
 					Node left = null;
 				}
 				
 				if (st.hasMoreTokens()) {
-					Node right = tree[Integer.parseInt(st.nextToken())];
+//					Node right = tree[Integer.parseInt(st.nextToken())];
 				} else {
 					Node right = null;
 				}

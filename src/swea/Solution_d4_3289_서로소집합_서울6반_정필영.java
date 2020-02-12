@@ -10,7 +10,8 @@ public class Solution_d4_3289_서로소집합_서울6반_정필영 {
 			return n;
 		}
 		else {
-			return unionFind[n] = find(unionFind[n]);
+			unionFind[n] = find(unionFind[n]);
+			return unionFind[n];
 		}
 	}
 	
@@ -82,6 +83,7 @@ public class Solution_d4_3289_서로소집합_서울6반_정필영 {
 					}
 				}
 			}
+			System.out.println(Arrays.toString(unionFind));
 			System.out.println("#" + tc + " " + sb);
 		}
 	}
