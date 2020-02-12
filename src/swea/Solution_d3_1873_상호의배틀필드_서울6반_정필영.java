@@ -4,6 +4,8 @@ import java.util.*;
 import java.io.*;
 
 public class Solution_d3_1873_상호의배틀필드_서울6반_정필영 {
+	public static final int[] dy = {-1, 1, 0, 0};
+	public static final int[] dx = {0, 0, -1, 1};
 
 	public static void main(String[] args) throws Exception {
 		System.setIn(new FileInputStream("res/input_d3_1873.txt"));
@@ -41,7 +43,36 @@ public class Solution_d3_1873_상호의배틀필드_서울6반_정필영 {
 			
 			for (int i=0; i<N; i++) {
 				func[i] = funcS[i].charAt(0);
+				
+				int ny = y;
+				int nx = x;
+				
+				if (funcS[i].equals("U")) {
+					ny -= 1;
+					ny = Math.max(0, ny);
+					
+				} else if (funcS[i].equals("D")) {
+					ny += 1;
+					ny = Math.min(H-1, ny);
+					
+				} else if (funcS[i].equals("L")) {
+					nx -= 1;
+					nx = Math.max(0, nx);
+					
+				} else if (funcS[i].equals("R")) {
+					nx += 1;
+					nx = Math.min(W-1, nx);
+					
+				} else if (funcS[i].equals("S")) {
+					
+				}
+				
 			}
+			
+//			for (int i=0; i<N; i++) {
+//				
+//			}
+			
 			
 //			for (char[] b:board) System.out.println(Arrays.toString(b));
 //			System.out.println(Arrays.toString(func));
