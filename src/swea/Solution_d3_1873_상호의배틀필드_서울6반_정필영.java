@@ -6,14 +6,26 @@ import java.io.*;
 public class Solution_d3_1873_상호의배틀필드_서울6반_정필영 {
 	public static final int[] dy = {-1, 1, 0, 0};
 	public static final int[] dx = {0, 0, -1, 1};
+//	public static final char[] dir = {'^', 'v', '<', '>'};
+	public static HashMap<Character, Integer> dir = new HashMap<>();
+	
+	public static void setDir() {
+		dir.put('^', 0);
+		dir.put('v', 1);
+		dir.put('<', 2);
+		dir.put('>', 3);
+	}
 
 	public static void main(String[] args) throws Exception {
 		System.setIn(new FileInputStream("res/input_d3_1873.txt"));
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st;
+		StringBuilder sb;
 		int T = Integer.parseInt(br.readLine());
 		
+		setDir();
+
 		for (int tc=1; tc<T+1; tc++) {
 			st = new StringTokenizer(br.readLine());
 			int H = Integer.parseInt(st.nextToken());
@@ -42,6 +54,10 @@ public class Solution_d3_1873_상호의배틀필드_서울6반_정필영 {
 			char[] func = new char[N];
 			
 			for (int i=0; i<N; i++) {
+				
+//				for (char[] b:board) System.out.println(Arrays.toString(b));
+//				System.out.println();
+				
 				func[i] = funcS[i].charAt(0);
 				
 				int ny = y;
@@ -50,31 +66,83 @@ public class Solution_d3_1873_상호의배틀필드_서울6반_정필영 {
 				if (funcS[i].equals("U")) {
 					ny -= 1;
 					ny = Math.max(0, ny);
+					if (board[ny][nx]=='.') {
+						board[ny][nx] = '^';
+						board[y][x] = '.';
+						y = ny;
+					} else {
+						board[y][x] = '^';
+					}
 					
 				} else if (funcS[i].equals("D")) {
 					ny += 1;
 					ny = Math.min(H-1, ny);
+					if (board[ny][nx]=='.') {
+						board[ny][nx] = 'v';
+						board[y][x] = '.';
+						y = ny;
+					} else {
+						board[y][x] = 'v';
+					}
 					
 				} else if (funcS[i].equals("L")) {
 					nx -= 1;
 					nx = Math.max(0, nx);
+					if (board[ny][nx]=='.') {
+						board[ny][nx] = '<';
+						board[y][x] = '.';
+						x = nx;
+					} else {
+						board[y][x] = '<';
+					}
 					
 				} else if (funcS[i].equals("R")) {
 					nx += 1;
 					nx = Math.min(W-1, nx);
+					if (board[ny][nx]=='.') {
+						board[ny][nx] = '>';
+						board[y][x] = '.';
+						x = nx;
+					} else {
+						board[y][x] = '>';
+					}
 					
 				} else if (funcS[i].equals("S")) {
+					int d = dir.get(board[y][x]);
+					ny += dy[d];
+					nx += dx[d];
+					while (0<=ny && ny<H && 0<=nx && nx<W) {
+						if (board[ny][nx]=='.' || board[ny][nx]=='*' || board[ny][nx]=='-') {
+							if (board[ny][nx]=='*') {
+								board[ny][nx] = '.';
+								break;
+							}
+							
+							ny += dy[d];
+							nx += dx[d];
+						} else {
+							break;
+						}
+					}
 					
 				}
 				
 			}
 			
-//			for (int i=0; i<N; i++) {
-//				
-//			}
+			sb = new StringBuilder();
 			
+			for (char[] b:board) {
+				for (char c:b) {
+					sb.append(c);
+				}
+				sb.append('\n');
+			}
+			
+			System.out.print("#" + tc + " " + sb);
 			
 //			for (char[] b:board) System.out.println(Arrays.toString(b));
+			
+			
 //			System.out.println(Arrays.toString(func));
 //			System.out.println(y + " " + x);
 //			System.out.println();

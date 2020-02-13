@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Main_jo_1169_주사위던지기1_서울6반_정필영 {
+public class Main_jo_1169_주사위던지기1_서울_06_정필영 {
 	public static int N, M;
 	public static int dice[] = {1, 2, 3, 4, 5, 6};
 	public static int set[];

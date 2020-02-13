@@ -3,7 +3,7 @@ package jungol;
 import java.util.*;
 import java.io.*;
 
-public class Main_jo_1828_냉장고_서울6반_정필영 {
+public class Main_jo_1828_냉장고_서울_06_정필영 {
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

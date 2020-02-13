@@ -3,7 +3,7 @@ package jungol;
 import java.io.*;
 import java.util.*;
 
-public class Main_jo_1733_오목_서울6반_정필영 {
+public class Main_jo_1733_오목_서울_06_정필영 {
 
 	public static void main(String[] args) throws Exception {
 		System.setIn(new FileInputStream("res/input_jo_1733.txt"));
