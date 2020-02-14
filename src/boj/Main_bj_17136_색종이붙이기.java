@@ -3,7 +3,7 @@ package boj;
 import java.util.*;
 import java.io.*;
 
-public class Main_boj_17136_색종이붙이기 {
+public class Main_bj_17136_색종이붙이기 {
 	public static final int SIZE = 10;
 	public static int[][] board;
 	public static int[] paper;

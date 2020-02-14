@@ -3,7 +3,7 @@ package boj;
 import java.util.*;
 import java.io.*;
 
-public class Main_boj_2239_스도쿠 {
+public class Main_bj_2239_스도쿠 {
 	public static final int SIZE = 9;
 	public static int[][] board;
 	public static int[][] result;

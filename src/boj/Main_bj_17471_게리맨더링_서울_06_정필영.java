@@ -3,7 +3,7 @@ package boj;
 import java.util.*;
 import java.io.*;
 
-public class Main_boj_17471_게리맨더링_서울_06_정필영 {
+public class Main_bj_17471_게리맨더링_서울_06_정필영 {
 	public static int result;
 	public static int N;
 	public static int[] arr, unionFind, weight;

@@ -2,7 +2,7 @@ package boj;
 
 import java.util.Scanner;
 
-public class Main_boj_1712_손익분기점 {
+public class Main_bj_1712_손익분기점 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
