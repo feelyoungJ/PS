@@ -11,7 +11,6 @@ public class Solution_d4_1953_탈주범검거 {
 	public static HashMap<Coord, Integer> resultHm;
 	
 	public static void main(String[] args) throws Exception {
-		System.setIn(new FileInputStream("res/input_d4_1953.txt"));
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st;
